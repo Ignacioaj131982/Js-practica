@@ -277,5 +277,38 @@ const buscarPorId = (array, id) =>{
     return null
 }
 
-console.log(buscarPorId(arrayCuentas, 6));
+//console.log(buscarPorId(arrayCuentas, 6));
+
+const filtrarPorSaldos = (arrayCuentas, saldoMinimo) => {
+    let acc = []
+    for (let i = 0; i < arrayCuentas.length; i ++){
+    if  (typeof saldoMinimo === 'number' && arrayCuentas[i].saldo >= saldoMinimo) {
+        acc.push({id: i + 1, titular: arrayCuentas[i].titular, saldo: arrayCuentas[i].saldo})
+    }
+    }
+return acc;
+}
+
+let resultado13 = filtrarPorSaldos(arrayCuentas, 1000)
+console.log(resultado13);
+
+
+const incrementarSaldo = (arrayCuentas, buscarPorId, id, saldo) =>{
+    const cuenta = buscarPorId(arrayCuentas, id);
+        if (cuenta) {
+            cuenta.saldo += saldo;
+            return { id: cuenta.id, titular: cuenta.titular, saldo: cuenta.saldo };
+        } else {
+            return undefined
+        }
+        
+    } 
+
+    let resultado14 = incrementarSaldo(arrayCuentas, buscarPorId, 4, 15000000)
+    console.log(resultado14);
+
+    
+
+
+
 

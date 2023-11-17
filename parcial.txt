@@ -1,0 +1,87 @@
+const  restarPares = (a, b) => {
+    if (a % 2 === 0 && b % 2 === 0) {
+        return a - b
+    } else {
+        return "Lo siento, uno o más paramatros no son pares"
+    }
+
+}
+
+let resultado = restarPares(2, 1)
+console.log(resultado);
+
+
+let entrada = true;
+let esMayor = 18;
+
+const accederRecital = (edad, tieneEntrada) => {
+    if (edad >= 18 && tieneEntrada) {
+        return true;
+        } else if (edad < 18 && tieneEntrada) {
+            return "Solo puedes acceder con un adulto acompañante";
+        }
+    
+    else {
+        return false;
+    }
+
+}
+
+
+
+let resultadoMayorEdad = accederRecital(18, true);
+let resultadoSinEntrada = accederRecital(20, false);
+let resultadoMenorEdad = accederRecital(15, true);
+
+
+console.log(resultadoMayorEdad);
+console.log(resultadoSinEntrada);
+console.log(resultadoMenorEdad);
+
+
+let productos = [
+    {
+        producto : "remera",
+        tipo: "indumentaria",
+        precio: 2100
+    },
+    {
+        producto : "notebook",
+        tipo: "tecnologia",
+        precio: 200000
+    },
+    {
+        producto : "celular",
+        tipo: "tecnologia",
+        precio: 27000
+    },
+    {
+        producto : "protector solar",
+        tipo: "cosmetica",
+        precio: 2500
+    },
+    {
+        producto : "pantalon",
+        tipo: "indumentaria",
+        precio: 7500
+    },
+    {
+        producto : "tablet",
+        tipo: "tecnologia",
+        precio: 60000
+    },
+
+]
+
+
+function filtrarProductos(array) {
+    let productosFiltrados = array.filter(producto => {
+    return producto.tipo === "tecnologia" && producto.precio >= 50000;
+});
+
+return productosFiltrados;
+}
+
+let resultado3 = filtrarProductos(productos);
+
+console.log(resultado3);
