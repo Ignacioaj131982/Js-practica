@@ -185,3 +185,78 @@ let resultado = propiedadUnica(arrayObjetos, 'edad');
 console.log(resultado);
 
 
+const alumnos = [
+    {
+        nombre: "Pepito",
+        numero_de_legajo: "AA932",
+        lista_de_notas: [
+            { materia: "matematica", nota: 8 },
+            { materia: "fisica", nota: 10 },
+            { materia: "quimica", nota: 6 },
+            { materia: "biologia", nota: 5 },
+            { materia: "ciencias sociales", nota: 8 }
+        ]
+    },
+    {
+        nombre: "Juan",
+        numero_de_legajo: "AA938",
+        lista_de_notas: [
+            { materia: "matematica", nota: 5 },
+            { materia: "fisica", nota: 4 },
+            { materia: "quimica", nota: 4 },
+            { materia: "biologia", nota: 5 },
+            { materia: "ciencias sociales", nota: 6 }
+        ]
+    },
+    {
+        nombre: "Pedro",
+        numero_de_legajo: "AA9B54",
+        lista_de_notas: [
+            { materia: "matematica", nota: 10 },
+            { materia: "fisica", nota: 18 },
+            { materia: "quimica", nota: 6 },
+            { materia: "biologia", nota: 7.5 },
+            { materia: "ciencias sociales", nota: 9 }
+        ]
+    }
+];
+
+const calcularPromedio = (nombre) =>{
+    let alumnoEncontrado = null;
+    for (let i = 0; i < alumnos.length; i ++) {
+        if (alumnos[i].nombre === nombre) {
+            alumnoEncontrado = alumnos[i];
+            break;
+        }
+    }
+
+    if (!alumnoEncontrado) {
+        return `El alumno ${nombre} no fue encontrado`;
+    }
+
+
+    let sumarNotas = 0;
+    let cantidadMaterias = 0;
+    for (let i = 0; i < alumnoEncontrado.lista_de_notas.length; i ++ ) {
+        const nota = alumnoEncontrado.lista_de_notas[i].nota;
+        sumarNotas += nota;
+        cantidadMaterias++;
+    }
+
+    const promedio = sumarNotas/cantidadMaterias;
+    if (cantidadMaterias === 0) {
+        return "No se encontraron notas válidas";
+    }
+    else if (promedio >= 6) {
+        return `Promedio: ${promedio}, aprobado`
+    } else {
+        return `Promedio: ${promedio}, despaprobado`
+    }
+    
+
+};
+
+const resultado2 = calcularPromedio("Pepito")
+console.log(resultado2);
+
+
