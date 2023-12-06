@@ -259,4 +259,49 @@ const calcularPromedio = (nombre) =>{
 const resultado2 = calcularPromedio("Pepito")
 console.log(resultado2);
 
+let numbers =[22, 33, 54, 66, 72]
+console.log(numbers[numbers.length, 2])
 
+let grupoDeAmigos = [ "Harry", "Ron", "Hermione", "Spiderman", "Hulk",
+"Ironman","Penélope Glamour", "Pierre Nodoyuna","Patán" ]
+console.log(grupoDeAmigos[5])
+
+let str = "un string cualquiera"
+let arrayAleatorio= ["Digital", "House", "true", "string", "123","false", "54", str ]
+console.log(arrayAleatorio[arrayAleatorio.length - 1])
+
+const peliculas = ["stars wars", "totoro", "pulp fiction", "la vida es bella"]
+
+console.log(peliculas[2]);
+
+const peliculasEnMayuculas = (array) => {
+    let acc = []
+    for (let i = 0; i < array.length; i ++ ) {
+        acc.push(array[i].toUpperCase());
+    }
+    return acc;
+}
+
+let resultado3 = peliculasEnMayuculas(peliculas)
+console.log(resultado3);
+
+
+const peliculas2 = ["toy story", "finding Nemo", "kung-fu panda", "wally", "fortnite"]
+
+const agregarPeliculas = (array1, array2) => {
+    let acc = []
+    for (let i = 0; i < array1.length; i ++) {
+        acc.push(array1[i].toUpperCase());
+        
+    }
+
+    for (let i = 0; i < array2.length; i ++) {
+        acc.push(array2[i].toUpperCase());
+        
+    }
+    return acc;
+
+};
+
+let resultado4 = agregarPeliculas(peliculas, peliculas2)
+console.log(resultado4);
